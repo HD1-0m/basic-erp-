@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   ✨ PROFESSIONAL BLUE-LAVENDER CALENDAR THEME — LARGE FONT EDITION
+   ========================================================================== */
+
+:root {
+  --primary: #0096ff;
+  --secondary: #6495ed;
+  --lavender: #dbdafe;
+  --soft-blue: #c3ebfa;
+  --event-bg: #e2f8ff;
+  --white: #ffffff;
+  --gray-light: #f7f8fa;
+  --text-dark: #1f1f1f;
+  --text-soft: #6b7280;
+  --border-light: #e5e7eb;
+  --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   1. Base Calendar Styling
+   ========================================================================== */
+
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: var(--shadow-light);
+  font-size: 16px !important; /* ⬆️ Increased base font */
+}
+
+.react-calendar__navigation__label__labelText {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 18px !important;
+}
+
+.react-calendar__tile--active {
+  background-color: var(--soft-blue) !important;
+  color: var(--text-dark) !important;
+  border-radius: 8px !important;
+}
+
+/* ==========================================================================
+   2. Toolbar Styling (React Big Calendar)
+   ========================================================================== */
+
+.rbc-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rbc-toolbar-label {
+  font-weight: 700 !important;
+  font-size: 20px !important; /* ⬆️ Larger label */
+  color: var(--text-dark);
+  text-align: right !important;
+}
+
+.rbc-btn-group:first-child {
+  display: none !important;
+}
+
+.rbc-btn-group:last-child {
+  display: flex;
+  gap: 8px;
+}
+
+.rbc-btn-group:last-child button {
+  border: none !important;
+  background-color: var(--lavender) !important;
+  color: var(--text-dark);
+  font-size: 15px !important; /* ⬆️ Bigger text for buttons */
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.rbc-btn-group:last-child button:hover {
+  background-color: var(--secondary) !important;
+  color: white !important;
+}
+
+.rbc-toolbar button.rbc-active {
+  background-color: var(--primary) !important;
+  color: white !important;
+  box-shadow: 0 0 5px rgba(0, 150, 255, 0.3);
+}
+
+/* ==========================================================================
+   3. Calendar Grid & Time Slots
+   ========================================================================== */
+
+.rbc-time-view {
+  border: none !important;
+  background-color: var(--white);
+}
+
+.rbc-time-header {
+  background-color: var(--gray-light);
+  border-bottom: 1px solid var(--border-light);
+  font-weight: 600;
+  font-size: 15px !important;
+  color: var(--text-soft);
+}
+
+.rbc-time-content {
+  border: none !important;
+}
+
+.rbc-time-gutter.rbc-time-column {
+  font-size: 14px !important; /* ⬆️ Increased time label font */
+  color: var(--text-soft);
+  border-right: 1px solid var(--border-light);
+  background-color: #fafafa;
+  font-weight: 500;
+}
+
+.rbc-timeslot-group {
+  border-bottom: 1px solid var(--border-light);
+  background-color: #fdfdfd;
+}
+
+.rbc-day-slot {
+  font-size: 15px !important; /* Slightly bigger grid font */
+  border-color: var(--border-light) !important;
+}
+
+/* ==========================================================================
+   4. Event Styling
+   ========================================================================== */
+
+.rbc-event {
+  border: none !important;
+  color: var(--text-dark) !important;
+  background-color: var(--event-bg) !important;
+  padding: 10px 14px !important; /* ⬆️ More breathing room */
+  margin: 3px 5px !important;
+  width: 98% !important;
+  border-radius: 10px;
+  box-shadow: var(--shadow-light);
+  font-weight: 600;
+  font-size: 15px !important; /* ⬆️ Bigger event title */
+  line-height: 1.4;
+  transition: all 0.15s ease-in-out;
+}
+
+.rbc-event:hover {
+  background-color: var(--soft-blue) !important;
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 150, 255, 0.12);
+}
+
+/* Add soft color variation for multiple events */
+.rbc-event:nth-child(4n + 1) {
+  background-color: #e7f3ff !important;
+}
+.rbc-event:nth-child(4n + 2) {
+  background-color: #edf0ff !important;
+}
+.rbc-event:nth-child(4n + 3) {
+  background-color: #eaf8ff !important;
+}
+.rbc-event:nth-child(4n + 4) {
+  background-color: #f5faff !important;
+}
+
+.rbc-event-label {
+  color: var(--text-soft) !important;
+  font-size: 13px !important; /* ⬆️ Slightly larger label */
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.rbc-event-content {
+  font-size: 15px !important; /* ⬆️ Larger title font */
+  font-weight: 700 !important;
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   5. Responsive Styling
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .rbc-toolbar {
+    flex-direction: column !important;
+    gap: 10px;
+    align-items: flex-start !important;
+  }
+  .rbc-event {
+    font-size: 13px !important;
+    padding: 8px 10px !important;
+  }
+  .rbc-toolbar-label {
+    font-size: 17px !important;
+  }
+}
+
+
+
+
+
